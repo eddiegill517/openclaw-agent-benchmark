@@ -1,0 +1,30 @@
+{
+  "gateway": { "mode": "local", "port": 18789 },
+  "models": {
+    "providers": {
+      "ollama": {
+        "baseUrl": "http://127.0.0.1:11434",
+        "api": "ollama",
+        "apiKey": "ollama-local",
+        "models": [{ "id": "qwen2.5:7b" }]
+      }
+    }
+  },
+  "agents": {
+    "defaults": { "model": { "primary": "ollama/qwen2.5:7b" } },
+    "list": [
+      {
+        "id": "borrower",
+        "workspace": "~/.openclaw/workspaces/borrower",
+        "agentDir": "~/.openclaw/agents/borrower/agent",
+        "model": "ollama/qwen2.5:7b"
+      },
+      {
+        "id": "validator",
+        "workspace": "~/.openclaw/workspaces/validator",
+        "agentDir": "~/.openclaw/agents/validator/agent",
+        "model": "ollama/qwen2.5:7b"
+      }
+    ]
+  }
+}
